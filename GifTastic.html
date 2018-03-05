@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GifTastic</title>
+</head>
+<body>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         
+         // Initial array of movies
+      var gif = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+
+
+         
+         // Here we construct our URL
+         var queryURL = "https://www.omdbapi.com/?t=" + gif + "&y=&plot=short&apikey=trilogy";
+
+
+ 
+
+
+// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function (response) {
+  // and display it in the div with an id of movie-view
+  console.log("hello")
+  console.log(response)
+  
+})
+
+</script>
+
+}
+
+</body>
+</html>
