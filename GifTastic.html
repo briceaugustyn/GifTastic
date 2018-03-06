@@ -5,39 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
+
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
 </head>
 <body>
-    
+
+    <button type="button" class="btn btn-secondary">Animal</button>
+
+  <form>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Add an animal</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Animal">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
          
-         // Initial array of movies
-      var gif = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
-
-
+         var giphy="guns"
          
          // Here we construct our URL
-         var queryURL = "https://www.omdbapi.com/?t=" + gif + "&y=&plot=short&apikey=trilogy";
-
-
- 
-
-
-// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {
-  // and display it in the div with an id of movie-view
-  console.log("hello")
-  console.log(response)
-  
-})
-
-</script>
-
-}
-
+         //var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats"
+         var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
+         //var queryURL = "https://api.giphy.com/v1/gifs/random"
+         //queryURL+= '?'+ $.param({'api-key':"dc6zaTOxFJmzC"})
+         queryURL+= giphy
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function (response) {
+            console.log(response)
+          })
+         
+          
+        </script>
 </body>
 </html>
